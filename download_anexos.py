@@ -8,7 +8,20 @@ soup = BeautifulSoup(resposta.text, "html.parser")
 
 links = soup.find_all("a")
 
-for link in links[:10]:
+anexos = []
+
+for link in links:
     href = link.get("href")
-    if href and href.lower().endswith:
-        print(href)
+    texto = link.get_text(strip=True).lower()
+
+    if not href:
+        continue
+    
+    if href.lower().endswith(".pdf") and ("anexo i" in texto or "anexo ii" in texto):
+        anexos.append(href)
+
+print ("Links dos anexos encontrados: ")
+for a in anexos:
+    print(a)
+
+    
