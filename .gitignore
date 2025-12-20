@@ -1,0 +1,10 @@
+venv/
+
+anexos/
+*.zip
+*.pdf
+
+__pycache__/
+*.pyc
+
+
