@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
@@ -33,4 +34,16 @@ print("Links Finais: ")
 for l in links_completos:
     print(l)
 
-    
+os.makedirs("anexos", exist_ok=True)
+
+for url_pdf in links_completos:
+    nome_arquivo = url_pdf.split("/")[-1]
+    caminho = os.path.join("anexos", nome_arquivo)
+
+    resposta_pdf = requests.get(url_pdf)
+
+    with open(caminho, "wb") as arquivo:
+        arquivo.write(resposta_pdf.content)
+
+
+    print(f"Baixando: {nome_arquivo}")
