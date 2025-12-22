@@ -43,23 +43,31 @@ O objetivo deste projeto foi praticar e demonstrar:
 - `zipfile` – compactação de arquivos
 - `os` – manipulação de arquivos e diretórios
 
-
+<br>
 
 ## ⚙️ Requisitos  
 
 - Python 3.x e bibliotecas listadas no arquivo requirements.txt.
 
+<br>
+
 ## 📦 Instalação  
 
 - Clone o repositório, ative o ambiente virtual no Windows com venv\Scripts\activate e instale as dependências com o comando pip install -r requirements.txt.
+  
+<br>
 
 ## ▶️ Como usar  
 
 - Execute o script principal com o comando python download_anexos.py. Ao final da execução, os PDFs e o arquivo ZIP estarão disponíveis na pasta anexos.
+  
+<br>
 
-# 🧪 Aprendizados  
+## 🧪 Aprendizados  
 
 - Este projeto reforçou conceitos práticos de web scraping, análise de HTML com BeautifulSoup, download de arquivos PDF, manipulação de arquivos e diretórios, compactação de arquivos em Python e boas práticas com Git e GitHub.
+
+<br>
 
 ## 📌 Observações  
 - O script cria automaticamente a pasta anexos caso ela não exista, apenas arquivos PDF são incluídos no arquivo ZIP e o código foi desenvolvido com foco no aprendizado.
