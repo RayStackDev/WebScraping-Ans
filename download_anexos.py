@@ -36,6 +36,8 @@ print("Links Finais: ")
 for l in links_completos:
     print(l)
 
+print()
+
 os.makedirs("anexos", exist_ok=True)
 
 for url_pdf in links_completos:
