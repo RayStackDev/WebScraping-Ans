@@ -2,6 +2,8 @@ import os
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+import zipfile
+
 url = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos"
 
 resposta = requests.get(url)
@@ -47,3 +49,12 @@ for url_pdf in links_completos:
 
 
     print(f"Baixando: {nome_arquivo}")
+
+zip_nome = os.path.join("anexos", "anexos.zip")
+
+with zipfile.ZipFile(zip_nome, "w", zipfile.ZIP_DEFLATED) as zipf:
+    for arquivo in os.listdir("anexos"):
+        caminho = os.path.join("anexos", arquivo)
+        zipf.write(caminho, arcname=arquivo)
+
+print("Arquivo ZIP criado com sucesso!")
